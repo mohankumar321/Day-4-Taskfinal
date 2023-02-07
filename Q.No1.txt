@@ -1,0 +1,16 @@
+QUESTION NO : 1
+
+How To Compare two JSON have the Same Properties  Without Order.
+
+     JSON.stringify(remoteJSON) == JSON.stringify(localJSON) 
+     but this return false: it seems that the order of the
+     properties is important.
+
+var remoteJSON = {"allowExternalMembers": "false", 
+"whoCanJoin": "CAN_REQUEST_TO_JOIN"},
+    localJSON = {"whoCanJoin": "CAN_REQUEST_TO_JOIN", 
+    "allowExternalMembers": "false"};
+    
+console.log( _.isEqual(remoteJSON, localJSON) );
+
+And I even tried deep compare with this solution and always got a false return.  
